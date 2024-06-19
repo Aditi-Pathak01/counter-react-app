@@ -4,39 +4,45 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 
 function App() {
-  let [initial, final] = useState(0);
-  if (initial < 0) {
-    final(0);
+  let [counter, setCounter] = useState(0);
+  if (counter < 0) {
+    setCounter(0);
   }
-  if (initial > 20) {
-    final(20);
+  if (counter > 20) {
+    setCounter(20);
   }
+  /*react interview Question on counter?
+
+  */
 
   return (
     <>
-      <h1>Counter = {initial}</h1>
-      <button
-        onClick={() => {
-          final(initial + 1);
-        }}
-      >
-        Add
-      </button>
-      <br />
-      <button
-        onClick={() => {
-          final(initial - 1);
-        }}
-      >
-        Delete
-      </button>
-      <button
-        onClick={() => {
-          final(0);
-        }}
-      >
-        Reset
-      </button>
+      <h1>Basic Counter</h1>
+      <h1>Counter = {counter}</h1>
+      <div>
+        <button
+          onClick={() => {
+            setCounter(counter + 1);
+          }}
+        >
+          Add
+        </button>
+        <br />
+        <button
+          onClick={() => {
+            setCounter(counter - 1);
+          }}
+        >
+          Delete
+        </button>
+        <button
+          onClick={() => {
+            setCounter(0);
+          }}
+        >
+          Reset
+        </button>
+      </div>
     </>
   );
 }
