@@ -12,7 +12,7 @@ function App() {
     setCounter(20);
   }
   /*react interview Question on counter?
-
+whar if setCounter (counter+1) is added again n again!
   */
 
   return (
@@ -23,6 +23,18 @@ function App() {
         <button
           onClick={() => {
             setCounter(counter + 1);
+
+            /* case-1 :- 
+            setCounter (counter+1) 
+            setCounter (counter+1) 
+            setCounter (counter+1) //what will be the output? 
+            =>output will be increment of 1 only! because usestate updates are sent in batches.
+            case-2 :- 
+            setCounter(counter + 1);
+            setCounter(prevC => prevC+1)
+            setCounter(prevC => prevC+1) //what will be the output? 
+            => output will be increment of 3 as prevC stores the old value!
+            */
           }}
         >
           Add
